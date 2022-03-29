@@ -4,6 +4,16 @@
 
 自己封装一个简易的可重入锁，主要实现两个方法: `tryAcquire` 和 `tryRelease`
 
+## MyCountDownLatchTest
+
+自己封装一个简易的MyCountDownLatch，主要实现两个方法: `tryAcquireShare` 和 `tryReleaseShared`
+
+主要步骤:
+
+1. 初始时设置好 status 数量
+2. countDown 时通过 tryReleaseShared 削减 status，当 status == 0 时 返回 true 唤醒等待的线程
+3. await 时调用 acquireSharedInterruptibly，最终调用 tryAcquireShared，tryAcquireShared 只校验 status == 0，不修改 status
+
 ## ReentryLocTest01
 
 ReentryLock 分为公平锁和非公平锁，但是 tryLock 默认是不公平的

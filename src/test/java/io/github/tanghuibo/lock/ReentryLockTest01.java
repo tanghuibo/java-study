@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -48,9 +49,7 @@ public class ReentryLockTest01 {
         });
 
         executorService.shutdown();
-        while (!executorService.isTerminated()) {
-            Thread.sleep(100L);
-        }
+        executorService.awaitTermination(5, TimeUnit.MINUTES);
 
 
 
