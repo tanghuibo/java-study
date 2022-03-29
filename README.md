@@ -1,5 +1,9 @@
 # JAVA 学习
 
+## MyReentryLockTest
+
+自己封装一个简易的可重入锁，主要实现两个方法: `tryAcquire` 和 `tryRelease`
+
 ## ReentryLocTest01
 
 ReentryLock 分为公平锁和非公平锁，但是 tryLock 默认是不公平的
