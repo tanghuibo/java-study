@@ -61,3 +61,49 @@ INFO  | 2022-03-28 18:34:49 [ck.ReentryLockTest01] pool-1-thread-18 unlock
 INFO  | 2022-03-28 18:34:49 [ck.ReentryLockTest01] pool-1-thread-19 lock
 INFO  | 2022-03-28 18:34:49 [ck.ReentryLockTest01] pool-1-thread-19 unlock
 ```
+
+## SemaphoreTest01
+
+a 线程 acquire 的数据不一定要 a 线程 release, 也可以由 b 线程 release
+
+```
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-1 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-4 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-2 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-3 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-7 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-8 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-5 start
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:54 [lock.SemaphoreTest01] pool-1-thread-9 start
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-11 start
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-10 start
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-6 start
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-12 start
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:55 [lock.SemaphoreTest01] pool-1-thread-14 start
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-15 start
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-16 start
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-17 start
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-19 start
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:56 [lock.SemaphoreTest01] pool-1-thread-18 start
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-13 start
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+INFO  | 2022-04-01 21:44:57 [lock.SemaphoreTest01] pool-1-thread-20 release data 
+```
